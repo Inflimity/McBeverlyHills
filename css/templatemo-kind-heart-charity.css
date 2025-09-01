@@ -666,6 +666,11 @@ strong {
   transition: all 0.5s;
 }
 
+.imgTarget{
+  width: 130px;
+  height: 130px;
+}
+
 
 /*---------------------------------------
   ABOUT              
@@ -688,6 +693,10 @@ strong {
   padding: 60px 40px;
 }
 
+
+.aboutImgTarget{
+  margin-bottom: 50px;
+}
 
 /*---------------------------------------
   COUNTER NUMBERS              
@@ -848,19 +857,33 @@ strong {
 
 .rowTarget {
   display: flex;
-  flex-direction: column;
-  align-items: center;       /* Center children horizontally */
-  justify-content: center;
-  width: 100%;   /* keep your debug border */
+  flex-direction: row;       /* Change to row for side-by-side */
+  align-items: flex-start;   /* Align items to the top */
+  justify-content: center;   /* Center the blocks horizontally */
+  flex-wrap: wrap;           /* Allow wrapping on smaller screens */
+  width: 100%;
   padding-top: 40px;
 }
-
 .blockTarget {
-  margin: 20px auto;         /* Center each block */
-  width: 80%;                /* Adjust width */
-  max-width: 800px;          /* Limit max size */
-  text-align: left;          /* Keep text readable */ /* keep your debug border */
+  display: flex;
+  flex-direction: column;   /* stack items vertically */
+  justify-content: center;  /* center vertically in each block */
+  align-items: center;      /* center horizontally */
+  margin: 20px;
+  max-width: 400px;
+  max-height: 400px;
+  flex: 1 1 300px;
+  text-align: center;
 }
+
+.blockTarget img {
+  max-width: 100%;      /* responsive width */
+  max-height: 250px;    /* make it bigger */
+  object-fit: contain;  /* show whole image */
+  margin-bottom: 10px;  /* space between image & text */
+}
+
+
 
 .targetImg {
   max-width: 200px;
