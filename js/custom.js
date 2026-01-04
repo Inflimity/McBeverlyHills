@@ -42,6 +42,26 @@
     });
   });
 
+
+  // Automatically update copyright year
+  document.getElementById("copyrightYear").textContent = new Date().getFullYear();
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const banner = document.getElementById("cookie-banner");
+    const btn = document.getElementById("accept-cookies-btn");
+
+    if (!localStorage.getItem("cookieConsent")) {
+      setTimeout(() => banner.classList.add("active"), 1000); // 1 second delay
+    }
+
+    btn.addEventListener("click", () => {
+      localStorage.setItem("cookieConsent", "true");
+      banner.classList.remove("active");
+    });
+  });
+
+
+
 })(window.jQuery);
 
 
